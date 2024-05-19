@@ -16,7 +16,7 @@ public class Part1 {
         int[][] matrix;
 
         Scanner sc = new Scanner(System.in);
-        rows = getDimension(sc, "Enter the number of rows: ");
+        rows = getDimension(sc, "\nEnter the number of rows: ");
         cols = getDimension(sc, "Enter the number of columns: ");
         matrix = getMatrix(rows, cols);
 
