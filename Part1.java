@@ -15,11 +15,12 @@ public class Part1 {
         int cols;
         int[][] matrix;
 
-        rows = getRows();
-        cols = getCols();
+        Scanner sc = new Scanner(System.in);
+        rows = getDimension(sc, "Enter the number of rows: ");
+        cols = getDimension(sc, "Enter the number of columns: ");
         matrix = getMatrix(rows, cols);
 
-        inputMatrix(matrix, rows, cols);
+        inputMatrix(sc, matrix, rows, cols);
         displayMatrix(matrix, rows, cols);
 
         int sum = getSum(matrix, rows, cols);
@@ -27,24 +28,16 @@ public class Part1 {
         printResult(sum, average);
     }
 
-    public static int getRows(){
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Enter number of rows: ");
-        return sc.nextInt();
+    public static int getDimension(Scanner sc, String prompt){
+            System.out.print(prompt);
+            return sc.nextInt();
     }
-
-    public static int getCols(){
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Enter number of columns: ");
-        return sc.nextInt();
-    }
-
+    
     public static int[][] getMatrix(int rows, int cols){
         return new int[rows][cols];
     }
 
-    private static void inputMatrix(int[][] matrix, int rows, int cols) {
-        Scanner sc = new Scanner(System.in);
+    private static void inputMatrix(Scanner sc,int[][] matrix, int rows, int cols) {
         System.out.println("Enter the matrix: ");
         for (int i =0; i < rows; i++){
             for (int j =0; j < cols; j++){
